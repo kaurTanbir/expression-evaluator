@@ -1,0 +1,66 @@
+<project name = "expression-evaluator" default = "dist">
+
+    <target name = "clean">
+        <delete dir = "build"/>
+    </target>
+
+    <target name="createBuildFolder" depends="clean">
+        <mkdir dir="build/classes/test"/>
+        <mkdir dir="build/classes/src"/>
+    </target>
+
+    <target name = "compile" depends = "createBuildFolder">
+        <javac srcdir = "src" destdir = "build/classes/src" includeAntRuntime = "false"/>
+    </target>
+
+    <target name = "compileTest" depends = "compile">
+        <javac srcdir = "Test" destdir= "build/classes/test"
+               classpath="dependencies/junit-4.10.jar;build/classes/src" includeAntRuntime = "false"/>
+    </target>
+
+    <target name="runTest" depends="compileTest">
+        <junit failureproperty = "test.failed">
+            <classpath>
+                <pathelement location="build/classes/src" />
+                <pathelement location="build/classes/test" />
+                <pathelement location="dependencies/test/junit-4.10.jar"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="build/classes/test">
+                    <include name="**/*Test*" />
+                </fileset>
+            </batchtest>
+            <formatter type = "brief" usefile = "false"/>
+        </junit>
+    </target>
+
+    <target name="exit" if="test.failed">
+        <fail message="JUnit: Cannot build some test failed."/>
+    </target>
+
+
+    <target name = "createFolderStructure" depends="runTest,exit">
+        <mkdir dir="build/distribute/bin"/>
+        <mkdir dir="build/distribute/lib"/>
+        <copy todir = "build/distribute/bin">
+            <fileset dir = "run-scripts"/>
+        </copy>
+        <copy file = "README.md" tofile = "build/distribute/README.md"/>
+    </target>
+
+    <target name = "build" depends = "createFolderStructure">
+        <jar destfile = "build/distribute/lib/expression-evaluator.jar" basedir = "build/classes/src"/>
+    </target>
+
+    <target name = "docs" depends="build">
+        <javadoc packagenames = "tanbirka.expression-evaluator.*"
+                 sourcepath = "src"
+                 destdir = "build/distribute/docs"
+                 author = "true" version = "true"/>
+    </target>
+
+    <target name = "dist" depends = "build">
+        <zip destfile = "expression-evaluator.zip" basedir = "build/distribute" update = "true"/>
+    </target>
+
+</project>
