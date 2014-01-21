@@ -29,7 +29,7 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
-#### VERSION 0.1
+#### VERSION 0.1 [ADDITION ONLY]
 
     Product takes two operands and an operation in between.
 
@@ -38,4 +38,6 @@ That's it, Now you are ready to run these commands
         values should be space separated.
 
 
+##### KNOWN BUG
 
+given expression "1" i.e single value throws exception
