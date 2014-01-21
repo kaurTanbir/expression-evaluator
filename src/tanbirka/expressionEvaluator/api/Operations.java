@@ -24,6 +24,12 @@ public class Operations {
                 return operand1 - operand2;
             }
         });
+        operators.put("*", new Operatable() {
+            @Override
+            public int evaluate(int operand1, int operand2) {
+                return operand1 * operand2;
+            }
+        });
     }
     public int operate(String operator, int operand1, int operand2) {
         return operators.get(operator).evaluate(operand1,operand2);

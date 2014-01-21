@@ -37,6 +37,17 @@ That's it, Now you are ready to run these commands
         operand can only be +ve integers.
         values should be space separated.
 
+    SAMPLE: "2 + 3"
+
+#### VERSION 0.2 [SINGLE OPERATOR]
+
+    Product takes two operands and an operation in between.
+
+        operator can be any of ‘+ , - , *’
+        operand can only be +ve integers.
+        values should be space separated.
+
+    SAMPLE: "2 + 3" , "3 - 2" , "3 * 2 "
 
 ##### KNOWN BUG
 
