@@ -45,9 +45,9 @@ public class EvaluatorTest {
     }
     @Test
     public void testGivesDividendOfTwoNumbers() throws Exception {
-        String input = "6 / 3";
+        String input = "66 / 3";
         Evaluator evaluator = new Evaluator();
-        int expected = 2;
+        int expected = 22;
 
         int actual = evaluator.evaluateExpression(input);
 
