@@ -43,4 +43,24 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testGivesDividendOfTwoNumbers() throws Exception {
+        String input = "6 / 3";
+        Evaluator evaluator = new Evaluator();
+        int expected = 2;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testGivesPowerOfNumber() throws Exception {
+        String input = "2 ^ 2";
+        Evaluator evaluator = new Evaluator();
+        int expected = 4;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
 }

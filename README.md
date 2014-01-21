@@ -47,7 +47,7 @@ That's it, Now you are ready to run these commands
         operand can only be +ve integers.
         values should be space separated.
 
-    SAMPLE: "2 + 3" , "3 - 2" , "3 * 2 "
+    SAMPLE: "2 + 3" , "3 - 2" , "3 * 2" , "4 / 2" , "2 ^ 2"
 
 ##### KNOWN BUG
 
