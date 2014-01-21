@@ -29,4 +29,13 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
+#### VERSION 0.1
+
+    Product takes two operands and an operation in between.
+
+        operator can be only ‘+’
+        operand can only be +ve integers.
+        values should be space separated.
+
+
 
