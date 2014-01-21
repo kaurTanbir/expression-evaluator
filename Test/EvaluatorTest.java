@@ -4,11 +4,13 @@ import org.junit.Assert;
 
 public class EvaluatorTest {
     @Test
-    public void testGetExpression() throws Exception {
+    public void testGivesAdditionOfTwoNumbers() throws Exception {
         String input = "2 + 3";
-        String expected = "2 + 3";
         Evaluator evaluator = new Evaluator();
-        String actual = evaluator.getExpression(input);
-        Assert.assertEquals(expected,actual);
+        int expected = 5;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
     }
 }
