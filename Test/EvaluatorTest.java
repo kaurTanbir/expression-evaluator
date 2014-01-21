@@ -13,4 +13,15 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testGivesDifferenceOfTwoNumbers() throws Exception {
+        String input = "5 - 3";
+        Evaluator evaluator = new Evaluator();
+        int expected = 2;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+
 }
