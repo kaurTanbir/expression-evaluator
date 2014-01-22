@@ -49,9 +49,21 @@ That's it, Now you are ready to run these commands
 
     SAMPLE: "2 + 3" , "3 - 2" , "3 * 2" , "4 / 2" , "2 ^ 2"
 
+#### VERSION 0.3 [MULTIPLE OPERATOR]
+
+    Product takes multiple operands and  operations. there should be an operator in between two operands.
+
+        operator can be any of ‘+ , - , *’
+        operand can only be +ve integers.
+        values should be space separated.
+
+    SAMPLE: "2 + 3 - 3 * 2"
+
+    BUGS FIXED:
+    given expression "1" i.e single value throws exception.
+
 ##### KNOWN BUG
 
-given expression "1" i.e single value throws exception.
 given expression to find quotient gives a rounded result.
 given expression to find the power of the number gives a rounded result.
 
