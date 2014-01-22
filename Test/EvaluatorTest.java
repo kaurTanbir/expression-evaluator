@@ -63,4 +63,44 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testGivesSumOfMultipleNumber() throws Exception {
+        String input = "2 + 2 + 3";
+        Evaluator evaluator = new Evaluator();
+        int expected = 7;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testGivesSumOfMultipleNumberAndMultipleOperators() throws Exception {
+        String input = "2 + 2 - 3";
+        Evaluator evaluator = new Evaluator();
+        int expected = 1;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testGivesResultOfMultipleOperationsOnMultipleNumbers() throws Exception {
+        String input = "2 + 2 - 3 * 5 / 5";
+        Evaluator evaluator = new Evaluator();
+        int expected = 1;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testGivesSameNumberIfOnlyOneNumberInExpression() throws Exception {
+        String input = "2";
+        Evaluator evaluator = new Evaluator();
+        int expected = 2;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
 }
