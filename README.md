@@ -51,4 +51,8 @@ That's it, Now you are ready to run these commands
 
 ##### KNOWN BUG
 
-given expression "1" i.e single value throws exception
+given expression "1" i.e single value throws exception.
+given expression to find quotient gives a rounded result.
+given expression to find the power of the number gives a rounded result.
+
+
