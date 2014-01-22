@@ -94,6 +94,16 @@ public class EvaluatorTest {
         Assert.assertEquals(expected, actual);
     }
     @Test
+    public void testGivesResultOfMultipleOperation() throws Exception {
+        String input = "2 ^ 2 + 4 - 8";
+        Evaluator evaluator = new Evaluator();
+        int expected = 0;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
     public void testGivesSameNumberIfOnlyOneNumberInExpression() throws Exception {
         String input = "2";
         Evaluator evaluator = new Evaluator();
