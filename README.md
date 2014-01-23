@@ -29,6 +29,19 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
+#### VERSION 0.7 [NEGATIVE AND DECIMAL NUMBERS]
+
+    Product takes multiple operands and  operations. there should be an operator in between two operands.
+    Supports the use of parenthesis around multiple single set of values.Parenthesis enclosed in other pair
+    is also supported.
+
+        operator can be any of ‘+ , - , * , / , ^’
+        values should be space separated.
+        operands can be negative or decimal numbers
+
+    SAMPLE: "2.5 + ( 3.5 - ( 3 ^ 1 ) * ( 20 * -2 )"
+
+
 #### VERSION 0.6 [NESTED PARENTHESIS]
 
     Product takes multiple operands and  operations. there should be an operator in between two operands.
