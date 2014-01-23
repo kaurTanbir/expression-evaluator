@@ -7,8 +7,11 @@ public class Evaluator {
 
     public int evaluateExpression(String expression) {
         String expressionToEval = expression;
-        if (expression.contains("("))
+        if (expression.contains("(")){
             expressionToEval = solveBrackets(expression);
+            return evaluateExpression(expressionToEval);
+
+        }
         return evaluate(expressionToEval.toString());
     }
 

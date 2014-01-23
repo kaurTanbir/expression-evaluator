@@ -123,4 +123,26 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testSolvesTheExpressionHavingMultiplePairsOfBrackets() {
+        String input = "1 + ( 2 * 12 ) - ( 4 ^ 2 )";
+        Evaluator evaluator = new Evaluator();
+        int expected = 9;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSolvesTheExpressionHavingMultiplePairOfBracketsInSingleExpression() {
+        String input = "1 + ( 2 * 12 ) - ( 5 * 5 )";
+        Evaluator evaluator = new Evaluator();
+        int expected = 0;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+
 }
