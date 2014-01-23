@@ -40,27 +40,21 @@
 
 
     <target name = "createFolderStructure" depends="runTest,exit">
-        <mkdir dir="build/distribute/bin"/>
-        <mkdir dir="build/distribute/lib"/>
-        <copy todir = "build/distribute/bin">
+        <mkdir dir="build/dist/bin"/>
+        <mkdir dir="build/dist/lib"/>
+        <copy todir = "build/dist/bin">
             <fileset dir = "run-scripts"/>
         </copy>
-        <copy file = "README.md" tofile = "build/distribute/README.md"/>
+        <copy file = "README.md" tofile = "build/dist/README.md"/>
     </target>
 
     <target name = "build" depends = "createFolderStructure">
-        <jar destfile = "build/distribute/lib/expression-evaluator.jar" basedir = "build/classes/src"/>
+        <jar destfile = "build/dist/lib/expression-evaluator.jar" basedir = "build/classes/src"/>
     </target>
 
-    <target name = "docs" depends="build">
-        <javadoc packagenames = "tanbirka.expression-evaluator.*"
-                 sourcepath = "src"
-                 destdir = "build/distribute/docs"
-                 author = "true" version = "true"/>
-    </target>
 
     <target name = "dist" depends = "build">
-        <zip destfile = "expression-evaluator.zip" basedir = "build/distribute" update = "true"/>
+        <zip destfile = "expression-evaluator.zip" basedir = "build/dist" update = "true"/>
     </target>
 
 </project>
