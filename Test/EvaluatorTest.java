@@ -113,4 +113,14 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testGivesResultOfExpressionWithOneParenthesis() throws Exception {
+        String input = "2 + ( 3 + 2 )";
+        Evaluator evaluator = new Evaluator();
+        int expected = 3;
+
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
 }

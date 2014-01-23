@@ -2,25 +2,16 @@ package tanbirka.expressionEvaluator.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Evaluator {
     public int evaluateExpression(String expression) {
 
         String[] values = expression.split(" ");
-
         List<String> operators = new ArrayList<String>();
         List<Integer> operands = new ArrayList<Integer>();
-        operators.add(0,"+");
-
-        for (String value : values) {
-            try{
-                operands.add(Integer.parseInt(value));
-            }
-            catch (Exception ex){
-                operators.add(value);
-            }
-
-        }
+        getOperandsAndOperator(values,operators,operands);
 
         Operations operationsMap = new Operations();
         int result = 0;
@@ -30,11 +21,23 @@ public class Evaluator {
             String operator = operators.get(i);
             int operand2 = operands.get(i);
             int operand1 = result;
-            result = operationsMap.operate(operator, operand1, operand2);
 
+            result = operationsMap.operate(operator, operand1, operand2);
         }
         return  result;
     }
+    private void getOperandsAndOperator(String[] values, List<String> operators, List<Integer> operands) {
+        for (String value : values) {
+            try {
+                operands.add(Integer.parseInt(value));
+            } catch (Exception ex) {
+                operators.add(value);
+            }
+        }
+    }
+
+
+
 }
 
 
