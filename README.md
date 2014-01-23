@@ -29,26 +29,6 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
-#### VERSION 0.1 [ADDITION ONLY]
-
-    Product takes two operands and an operation in between.
-
-        operator can be only ‘+’
-        operand can only be +ve integers.
-        values should be space separated.
-
-    SAMPLE: "2 + 3"
-
-#### VERSION 0.2 [SINGLE OPERATOR]
-
-    Product takes two operands and an operation in between.
-
-        operator can be any of ‘+ , - , *’
-        operand can only be +ve integers.
-        values should be space separated.
-
-    SAMPLE: "2 + 3" , "3 - 2" , "3 * 2" , "4 / 2" , "2 ^ 2"
-
 #### VERSION 0.3 [MULTIPLE OPERATOR]
 
     Product takes multiple operands and  operations. there should be an operator in between two operands.
@@ -66,5 +46,27 @@ That's it, Now you are ready to run these commands
 
 given expression to find quotient gives a rounded result.
 given expression to find the power of the number gives a rounded result.
+
+#### VERSION 0.2 [SINGLE OPERATOR]
+
+    Product takes two operands and an operation in between.
+
+        operator can be any of ‘+ , - , *’
+        operand can only be +ve integers.
+        values should be space separated.
+
+    SAMPLE: "2 + 3" , "3 - 2" , "3 * 2" , "4 / 2" , "2 ^ 2"
+
+#### VERSION 0.1 [ADDITION ONLY]
+
+    Product takes two operands and an operation in between.
+
+        operator can be only ‘+’
+        operand can only be +ve integers.
+        values should be space separated.
+
+    SAMPLE: "2 + 3"
+
+
 
 
