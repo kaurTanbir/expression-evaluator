@@ -41,6 +41,9 @@ That's it, Now you are ready to run these commands
 
     SAMPLE: "2.5 + ( 3.5 - ( 3 ^ 1 ) * ( 20 * -2 )"
 
+##### BUGS FIXED
+given expression to find quotient gives a rounded result.
+given expression to find the power of the number gives a rounded result.
 
 #### VERSION 0.6 [NESTED PARENTHESIS]
 
@@ -94,10 +97,7 @@ That's it, Now you are ready to run these commands
     BUGS FIXED:
     given expression "1" i.e single value throws exception.
 
-##### KNOWN BUG
 
-given expression to find quotient gives a rounded result.
-given expression to find the power of the number gives a rounded result.
 
 #### VERSION 0.2 [SINGLE OPERATOR]
 
