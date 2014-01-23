@@ -29,11 +29,25 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
+#### VERSION 0.5 [MULTIPLE PAIR OF PARENTHESIS]
+
+    Product takes multiple operands and  operations. there should be an operator in between two operands.
+    Supports the use of parenthesis around multiple single set of values.
+
+        operator can be any of ‘+ , - , * , / , ^’
+        operand can only be +ve integers.
+        values should be space separated.
+        can have multiple pairs of parenthesis but should not be nested (i.e one under another).
+
+    SAMPLE: "2 + ( 3 - 3  ) * ( 20 / 2 )"
+
+
 #### VERSION 0.4 [SINGLE PAIR OF PARENTHESIS]
 
-    Product takes multiple operands and  operations. there should be an operator in between two operands. Supports the use of parenthesis around a single set of values.
+    Product takes multiple operands and  operations. there should be an operator in between two operands.
+    Supports the use of parenthesis around a single set of values.
 
-        operator can be any of ‘+ , - , *’
+        operator can be any of ‘+ , - , * , / , ^’’
         operand can only be +ve integers.
         values should be space separated.
         can have parenthesis but only a single pair.
@@ -45,7 +59,7 @@ That's it, Now you are ready to run these commands
 
     Product takes multiple operands and  operations. there should be an operator in between two operands.
 
-        operator can be any of ‘+ , - , *’
+        operator can be any of ‘+ , - , * , / , ^’
         operand can only be +ve integers.
         values should be space separated.
 
@@ -63,7 +77,7 @@ given expression to find the power of the number gives a rounded result.
 
     Product takes two operands and an operation in between.
 
-        operator can be any of ‘+ , - , *’
+        operator can be any of ‘+ , - , * , / , ^’
         operand can only be +ve integers.
         values should be space separated.
 
