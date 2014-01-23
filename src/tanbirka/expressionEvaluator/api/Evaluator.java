@@ -2,8 +2,6 @@ package tanbirka.expressionEvaluator.api;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Evaluator {
     public int evaluateExpression(String expression) {
@@ -11,7 +9,9 @@ public class Evaluator {
         String[] values = expression.split(" ");
         List<String> operators = new ArrayList<String>();
         List<Integer> operands = new ArrayList<Integer>();
-        getOperandsAndOperator(values,operators,operands);
+
+        operators.add("+");
+        getOperandsAndOperator(values, operators, operands);
 
         Operations operationsMap = new Operations();
         int result = 0;
