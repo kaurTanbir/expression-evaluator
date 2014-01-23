@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Evaluator {
 
-    public int evaluateExpression(String expression) {
+    public double evaluateExpression(String expression) {
         String expressionToEval = expression;
         if (expression.contains("(")){
             expressionToEval = solveBrackets(expression);
@@ -14,25 +14,25 @@ public class Evaluator {
         return evaluate(expressionToEval.toString());
     }
 
-    private int evaluate(String expression) {
+    private double evaluate(String expression) {
         String[] values = expression.trim().split(" ");
 
         List<String> operators = new ArrayList<String>();
-        List<Integer> operands = new ArrayList<Integer>();
+        List<Double> operands = new ArrayList<Double>();
         operators.add("+");
         separateOperandsAndOperator(values, operators, operands);
-        int result = operate(operators,operands);
+        double result = operate(operators,operands);
         return result;
     }
-    private int operate(List<String> operators,List<Integer> operands){
+    private double operate(List<String> operators,List<Double> operands){
         Operations operationsMap = new Operations();
-        int result = 0;
+        double result = 0;
 
         for (int i = 0; i < operators.size(); i++) {
 
             String operator = operators.get(i);
-            int operand2 = operands.get(i);
-            int operand1 = result;
+            double operand2 = operands.get(i);
+            double operand1 = result;
 
             result = operationsMap.operate(operator, operand1, operand2);
         }
@@ -40,10 +40,10 @@ public class Evaluator {
     }
 
 
-    private void separateOperandsAndOperator(String[] values, List<String> operators, List<Integer> operands) {
+    private void separateOperandsAndOperator(String[] values, List<String> operators, List<Double> operands) {
         for (String value : values) {
             try {
-                operands.add(Integer.parseInt(value));
+                operands.add(Double.parseDouble(value));
             } catch (Exception ex) {
                 operators.add(value);
             }
@@ -65,8 +65,8 @@ public class Evaluator {
             }
         }
         expressionInBracket = expression.substring(startIndex + 1, endIndex);
-        int resultOfBracket = this.evaluate(expressionInBracket);
-        expressionWithoutBrackets = expression.replace('(' + expressionInBracket + ')', Integer.toString(resultOfBracket));
+        double resultOfBracket = this.evaluate(expressionInBracket);
+        expressionWithoutBrackets = expression.replace('(' + expressionInBracket + ')', Double.toString(resultOfBracket));
         return expressionWithoutBrackets;
     }
 }
