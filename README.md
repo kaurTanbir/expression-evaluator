@@ -29,6 +29,19 @@ That's it, Now you are ready to run these commands
 
 `$sh tk_eval.sh "2 + 3"`
 
+#### VERSION 0.6 [NESTED PARENTHESIS]
+
+    Product takes multiple operands and  operations. there should be an operator in between two operands.
+    Supports the use of parenthesis around multiple single set of values.Parenthesis enclosed in other pair
+    is also supported.
+
+        operator can be any of ‘+ , - , * , / , ^’
+        operand can only be +ve integers.
+        values should be space separated.
+        can have multiple pairs as well as nested brackets .
+
+    SAMPLE: "2 + ( 3 - ( 3 ^ 1 ) * ( 20 / 2 )"
+
 #### VERSION 0.5 [MULTIPLE PAIR OF PARENTHESIS]
 
     Product takes multiple operands and  operations. there should be an operator in between two operands.
@@ -47,7 +60,7 @@ That's it, Now you are ready to run these commands
     Product takes multiple operands and  operations. there should be an operator in between two operands.
     Supports the use of parenthesis around a single set of values.
 
-        operator can be any of ‘+ , - , * , / , ^’’
+        operator can be any of ‘+ , - , * , / , ^’
         operand can only be +ve integers.
         values should be space separated.
         can have parenthesis but only a single pair.
