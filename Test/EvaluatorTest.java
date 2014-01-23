@@ -163,5 +163,23 @@ public class EvaluatorTest {
 
         assertEquals(expected, actual, 0.00);
     }
+    @Test
+    public void testSolvesTheExpressionHavingNegativeNumbers() {
+        String input = "1 + ( -2.5 * 4 ) + 5";
+        Evaluator evaluator = new Evaluator();
+        double expected = -4.00;
+        double actual = evaluator.evaluateExpression(input);
+
+        assertEquals(expected, actual, 0.00);
+    }
+    @Test
+    public void testSolvesTheExpressionHavingNegativeNumber() {
+        String input = "1 + -3 + 5";
+        Evaluator evaluator = new Evaluator();
+        double expected = 3.00;
+        double actual = evaluator.evaluateExpression(input);
+
+        assertEquals(expected, actual, 0.00);
+    }
 
 }
