@@ -6,7 +6,7 @@ import java.util.List;
 public class Evaluator {
 
     public double evaluateExpression(String expression) {
-        String expressionToEval = expression;
+        String expressionToEval = parseInput(expression);
         if (expression.contains("(")){
             expressionToEval = solveBrackets(expression);
             return evaluateExpression(expressionToEval);
@@ -21,7 +21,7 @@ public class Evaluator {
         List<Double> operands = new ArrayList<Double>();
         operators.add("+");
         separateOperandsAndOperator(values, operators, operands);
-        double result = operate(operators,operands);
+        Double result = operate(operators,operands);
         return result;
     }
     private double operate(List<String> operators,List<Double> operands){
@@ -68,5 +68,10 @@ public class Evaluator {
         double resultOfBracket = this.evaluate(expressionInBracket);
         expressionWithoutBrackets = expression.replace('(' + expressionInBracket + ')', Double.toString(resultOfBracket));
         return expressionWithoutBrackets;
+    }
+    public String parseInput(String input) {
+        return input.trim().replaceAll(" +", "").replaceAll("\\+", " + ").replaceAll("\\-", " - ")
+                .replaceAll("\\*", " * ").replaceAll("\\/", " / ").replaceAll("\\(", " ( ")
+                .replaceAll("\\)", " ) ").replaceAll("\\^", " ^ ").replaceAll("  - ", " -");
     }
 }
