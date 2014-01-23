@@ -143,6 +143,15 @@ public class EvaluatorTest {
 
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testSolvesTheExpressionHavingNestedBrackets() {
+        String input = "1 + ( 2 * ( 12 - 2 ) ) - ( 5 * 5 )";
+        Evaluator evaluator = new Evaluator();
+        int expected = -4;
 
+        int actual = evaluator.evaluateExpression(input);
+
+        Assert.assertEquals(expected, actual);
+    }
 
 }

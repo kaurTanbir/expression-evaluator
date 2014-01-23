@@ -10,7 +10,6 @@ public class Evaluator {
         if (expression.contains("(")){
             expressionToEval = solveBrackets(expression);
             return evaluateExpression(expressionToEval);
-
         }
         return evaluate(expressionToEval.toString());
     }
@@ -22,7 +21,10 @@ public class Evaluator {
         List<Integer> operands = new ArrayList<Integer>();
         operators.add("+");
         separateOperandsAndOperator(values, operators, operands);
-
+        int result = operate(operators,operands);
+        return result;
+    }
+    private int operate(List<String> operators,List<Integer> operands){
         Operations operationsMap = new Operations();
         int result = 0;
 
@@ -36,6 +38,7 @@ public class Evaluator {
         }
         return result;
     }
+
 
     private void separateOperandsAndOperator(String[] values, List<String> operators, List<Integer> operands) {
         for (String value : values) {
