@@ -8,7 +8,7 @@ public class Evaluator {
     public double evaluateExpression(String expression) {
         String expressionToEval = parseInput(expression);
         if (expression.contains("(")){
-            expressionToEval = solveBrackets(expression);
+            expressionToEval = solveBrackets(expressionToEval);
             return evaluateExpression(expressionToEval);
         }
         return evaluate(expressionToEval.toString());
@@ -27,7 +27,6 @@ public class Evaluator {
     private double operate(List<String> operators,List<Double> operands){
         Operations operationsMap = new Operations();
         double result = 0;
-
         for (int i = 0; i < operators.size(); i++) {
 
             String operator = operators.get(i);
@@ -41,6 +40,7 @@ public class Evaluator {
 
 
     private void separateOperandsAndOperator(String[] values, List<String> operators, List<Double> operands) {
+
         for (String value : values) {
             try {
                 operands.add(Double.parseDouble(value));
@@ -52,6 +52,7 @@ public class Evaluator {
 
 
     private String solveBrackets(String expression) {
+
         String expressionInBracket, expressionWithoutBrackets;
         int startIndex =0;
         int endIndex =0;
@@ -65,13 +66,22 @@ public class Evaluator {
             }
         }
         expressionInBracket = expression.substring(startIndex + 1, endIndex);
-        double resultOfBracket = this.evaluate(expressionInBracket);
+        double resultOfBracket = evaluate(expressionInBracket);
         expressionWithoutBrackets = expression.replace('(' + expressionInBracket + ')', Double.toString(resultOfBracket));
         return expressionWithoutBrackets;
     }
-    public String parseInput(String input) {
-        return input.trim().replaceAll(" +", "").replaceAll("\\+", " + ").replaceAll("\\-", " - ")
-                .replaceAll("\\*", " * ").replaceAll("\\/", " / ").replaceAll("\\(", " ( ")
-                .replaceAll("\\)", " ) ").replaceAll("\\^", " ^ ").replaceAll("  - ", " -");
+
+    private String parseInput(String expression) {
+        expression = expression.replaceAll(" +", "");
+        return expression.replaceAll("\\+", " + ")
+                .replaceAll("\\-", " - ")
+                .replaceAll("\\*", " * ")
+                .replaceAll("/", " / ")
+                .replaceAll("\\^", " ^ ")
+                .replaceAll("\\(", "( ")
+                .replaceAll("\\)", " )")
+                .replaceAll("  - ", " -")
+                .replaceFirst("^ - ", "-");
     }
+
 }
