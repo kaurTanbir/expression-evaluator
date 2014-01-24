@@ -290,4 +290,34 @@ public class EvaluatorTest {
 
         assertEquals(expected, actual, 0.00);
     }
+    @Test
+    public void testEvaluatesExpressionOnlyOneNegativeNumberInBrackets() {
+        String input = "((-1))";
+        Evaluator evaluator = new Evaluator();
+        double expected = -1;
+
+        double actual = evaluator.evaluateExpression(input);
+
+        assertEquals(expected, actual, 0.00);
+    }
+    @Test
+    public void testEvaluatesExpressionNegativeNumberInBrackets() {
+        String input = "(1+((1)+(1)))";
+        Evaluator evaluator = new Evaluator();
+        double expected = 3;
+
+        double actual = evaluator.evaluateExpression(input);
+
+        assertEquals(expected, actual, 0.00);
+    }
+    @Test
+    public void testEvaluatesExpressionNegativeNumber() {
+        String input = "1.25 -- 0.25";
+        Evaluator evaluator = new Evaluator();
+        double expected = 1.5;
+
+        double actual = evaluator.evaluateExpression(input);
+
+        assertEquals(expected, actual, 0.00);
+    }
 }
