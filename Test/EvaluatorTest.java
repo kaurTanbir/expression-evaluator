@@ -1,5 +1,6 @@
-import org.junit.Test;
 import tanbirka.expressionEvaluator.api.Evaluator;
+
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 

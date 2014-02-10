@@ -3,40 +3,38 @@ package tanbirka.expressionEvaluator.api;
 import java.util.HashMap;
 import java.util.Map;
 
-interface Operatable {
-    double evaluate(double operand1, double operand2);
-}
+
 public class Operations {
-    Map<String, Operatable> operators;
+    Map<String, Operator> operators;
 
     public Operations() {
-        operators = new HashMap<String, Operatable>();
+        operators = new HashMap<String, Operator>();
 
-        operators.put("+", new Operatable() {
+        operators.put("+", new Operator() {
             @Override
             public double evaluate(double operand1, double operand2) {
                 return operand1 + operand2;
             }
         });
-        operators.put("-", new Operatable() {
+        operators.put("-", new Operator() {
             @Override
             public double evaluate(double operand1, double operand2) {
                 return operand1 - operand2;
             }
         });
-        operators.put("*", new Operatable() {
+        operators.put("*", new Operator() {
             @Override
             public double evaluate(double operand1, double operand2) {
                 return operand1 * operand2;
             }
         });
-        operators.put("/", new Operatable() {
+        operators.put("/", new Operator() {
             @Override
             public double evaluate(double operand1, double operand2) {
                 return operand1 / operand2;
             }
         });
-        operators.put("^", new Operatable() {
+        operators.put("^", new Operator() {
             @Override
             public double evaluate(double operand1, double operand2) {
                 return (double) Math.pow(operand1, operand2);
